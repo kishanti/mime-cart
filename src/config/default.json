@@ -1,0 +1,12 @@
+{
+    "configuration": {
+        "jwt": {
+            "secret": "M5^rs$_r39@!lGsjrmdXjaov7fDqT",
+            "algorithm": "HS256",
+            "tokenLife": "365d",
+            "issuer": "!612A94@9p",
+            "audience": "",
+            "subject": ""
+        }
+    }
+}
