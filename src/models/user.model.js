@@ -2,7 +2,13 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserModel = new Schema({
-    name: {
+    first_name: {
+        type: String
+    },
+    last_name: {
+        type: String
+    },
+    phone_code: {
         type: String
     },
     mobile: {
@@ -19,6 +25,5 @@ const UserModel = new Schema({
   
 },{ timestamps: true });
 
-// UserModel.plugin(validator);
 
 module.exports = mongoose.model("users", UserModel, "users");

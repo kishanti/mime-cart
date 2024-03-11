@@ -1,4 +1,3 @@
-
 const clc = require("cli-color");
 const mongoose = require("mongoose");
 
@@ -6,7 +5,10 @@ var MONGODB_URL = process.env["MONGODB_SERVER_URL_" + process.env.RUN_MODE]; //A
 console.log(MONGODB_URL);
 
 mongoose
-  .connect("mongodb://127.0.0.1/mime-cart", { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect("mongodb://127.0.0.1/mime-cart", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     //don't show the log when it is test
     console.log("Connected to %s", clc.cyan.underline(MONGODB_URL));
@@ -21,10 +23,14 @@ mongoose
   });
 
 const db = {
-  // UserModel: require("./user.model"),
-  categoryModel: require("./categories.model"),
-  productModel: require("./products.model"),
-  
-}
+  UserModel: require("./user.model"),
+  CategoryModel: require("./categories.model"),
+  ProductModel: require("./products.model"),
+  UserRoleModel: require("./userRole.model"),
+  RoleModel: require("./role.model"),
+  CartModel: require("./carts.model"),
+  AddressModel: require("./addresses.model"),
+  OrderModel: require("./orders.model"),
+};
 
 module.exports = { db };

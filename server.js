@@ -10,7 +10,7 @@ app.use(cors());
 
 app.use(express.json({ limit: "50mb", extended: true }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
-app.use("/public", express.static(path.join(__dirname, "./public")));
+app.use("/public", express.static(path.join(__dirname, "./src/public")));
 
 app.use("/api", require("./src/routes/index"));
 
